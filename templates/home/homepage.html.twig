@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1> {{ welcome }} </h1>
+
+<div>
+    This is the homepage
+</div>
+
+<h2>Upcoming Movies ({{ movies | length }})</h2>
+
+<ul>
+    {% for movie in movies %}
+        <li>{{ movie }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
