@@ -15,15 +15,7 @@ class HomeController extends AbstractController
      */
     public function homepage(){
 
-        $movies = [
-            'Inception',
-            'Blood Diamond',
-            'Titanic'
-        ];
-       return $this -> render('home/homepage.html.twig',[
-           'welcome' => ucwords("Welcome Sana"),
-           'movies' => $movies,
-        ]);
+       return $this -> render('home/homepage.html.twig');
 
     }
 }
