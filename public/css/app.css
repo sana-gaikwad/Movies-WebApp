@@ -1,0 +1,239 @@
+body {
+    font-family: spartan;
+    color: #444;
+}
+
+/*header */
+#header {
+    background: #1c1c1c;
+    color: #d5d5d5;
+    cursor: default;
+    height: 5em;
+    left: 0;
+    line-height: 5em;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    width: 100%;
+    z-index: 10001;
+}
+
+#header .inner {
+    max-width: 65em;
+    width: calc(100% - 6em);
+    margin: 0 auto;
+    position: relative;
+}
+
+@media screen and (max-width: 480px) {
+
+    #header .inner {
+        max-width: 90%;
+        width: 90%;
+    }
+
+}
+
+#header .logo {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    height: inherit;
+    left: 0;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    color: #e5474b;
+    font-size: 1.75em;
+    text-transform: none;
+    font-weight: normal;
+    padding: 0;
+}
+
+#header .logo:hover {
+    color: rgba(229, 71, 75, 0.75);
+}
+
+#header a {
+    -moz-transition: color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    padding: 0 2em;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .85em;
+}
+
+#header a:hover {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#header a:last-child {
+    padding-right: 0em;
+}
+
+@media screen and (max-width: 736px) {
+
+    #header a {
+        padding: 0 0.5em;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #header {
+        min-width: 320px;
+    }
+
+}
+
+/*banner*/
+#banner {
+
+    color: #f2a3a5;
+    padding: 13em 0 11em 0;
+    background-color: #0c0c0c;
+    background: url("/images/banner.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 15% left;
+    text-align: left;
+    position: relative;
+    z-index: 9999;
+}
+
+#banner h1 {
+    color: #fff;
+}
+
+#banner .inner {
+    max-width: 65em;
+    width: calc(100% - 6em);
+    margin: 0 auto;
+    position: relative;
+    z-index: 10000;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 480px) {
+
+    #banner .inner {
+        max-width: 90%;
+        width: 90%;
+    }
+
+}
+
+#banner h1 {
+    font-size: 2em;
+    margin: 0 0 1em 0;
+    padding: 0;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+#banner h1 span {
+    font-weight: 400;
+}
+
+
+@media screen and (max-width: 1680px) {
+
+    #banner {
+        padding: 10em 0 8em 0;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    #banner {
+        padding: 8em 0 6em 0;
+    }
+
+}
+
+@media screen and (max-width: 980px) {
+
+    #banner {
+        padding: 12em 0 10em 0;
+    }
+
+    #banner br {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 736px) {
+
+    #banner {
+        padding: 4em 0 2em 0;
+    }
+
+    #banner h1 {
+        font-size: 1.75em;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #banner {
+        padding: 5em 0 3em 0;
+    }
+
+    #banner ul {
+        margin-top: 1em;
+    }
+
+}
+ul.actions{
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Button */
+.button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: .8em;
+    font-weight: 700;
+    height: 3.5em;
+    line-height: 3.65em;
+    padding: 0 2.25em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: #5a5a5a;
+    color: #ffffff !important;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.button.alt {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.button.alt:hover {
+    background-color: #676767;
+    text-decoration: none;
+}
+
+
+/*footer section */
+footer {
+
+    background: #1c1c1c;
+    color: #d5d5d5;
+
+}

@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
+
 {% block body %}
-<h1> {{ welcome }} </h1>
 
-<div>
-    This is the homepage
-</div>
+    {#--------------- Banner Section---------- #}
+    <section id="banner">
+        <div class="inner">
+            <h1>The Open Movie Database </h1>
 
-<h2>Upcoming Movies ({{ movies | length }})</h2>
+            <ul class="actions">
+                <li><a href="{{ path('app_homepage') }}" class="button alt">Get Started</a></li>
+            </ul>
+        </div>
+    </section>
+    {#--------------- Banner Section ends---------- #}
 
-<ul>
-    {% for movie in movies %}
-        <li>{{ movie }}</li>
-    {% endfor %}
-</ul>
 
 {% endblock %}
+
