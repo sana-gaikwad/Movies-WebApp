@@ -3,9 +3,16 @@
 {% block title %}New Movie{% endblock %}
 
 {% block body %}
-    <h1>Create new Movie</h1>
+    <section class="main">
 
-    {{ include('movie/_form.html.twig') }}
+     <div class ="container">
 
-    <a href="{{ path('movie_index') }}">back to list</a>
+         <h1>Create new Movie</h1>
+
+         {{ include('movie/_form.html.twig') }}
+
+     <a href="{{ path('movie_index') }}">back to list</a>
+     </div>
+    </section>
+
 {% endblock %}

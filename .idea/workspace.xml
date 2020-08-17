@@ -25,7 +25,29 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton" />
+    <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton">
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Director.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Director.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Genre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Genre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/show.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,6 +216,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Web app Skeleton" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="379" y="160" key="#Inspections" timestamp="1597646331789">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="379" y="160" key="#Inspections/0.0.1504.963@0.0.1504.963" timestamp="1597646331789" />
     <state x="208" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597554837206">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -222,9 +248,9 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="240" y="57" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1597470366506" />
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1597580041005">
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1597580633275">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597580041005" />
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597580633275" />
   </component>
 </project>

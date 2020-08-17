@@ -3,6 +3,9 @@
 {% block title %}Movie index{% endblock %}
 
 {% block body %}
+
+    <section class="main">
+        <div class ="container">
     <h1>Movie index</h1>
 
     <table class="table">
@@ -39,5 +42,8 @@
         </tbody>
     </table>
 
+
     <a href="{{ path('movie_new') }}">Create new</a>
+        </div>
+    </section>
 {% endblock %}

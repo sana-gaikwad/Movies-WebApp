@@ -11,7 +11,6 @@ body {
     height: 5em;
     left: 0;
     line-height: 5em;
-    position: fixed;
     text-align: right;
     top: 0;
     width: 100%;
@@ -97,7 +96,7 @@ body {
 #banner {
 
     color: #f2a3a5;
-    padding: 13em 0 11em 0;
+    padding: 16em 0 11em 0;
     background-color: #0c0c0c;
     background: url("/images/banner.jpeg");
     background-size: cover;
@@ -230,10 +229,18 @@ ul.actions{
 }
 
 
+.main {
+    padding: 5em 0 2em 0;
+}
+
 /*footer section */
 footer {
 
     background: #1c1c1c;
     color: #d5d5d5;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
 
 }
