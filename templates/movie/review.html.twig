@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rate Movie{% endblock %}
+
+{% block body %}
+    <section class="main">
+
+        <div class ="container">
+            <h1>Rate Movie</h1>
+
+
+                <div class="row">
+                    <div class="col">
+                        {{movie.id }}
+                    </div>
+                    <div class="col" id="some-custom-id">
+                        {{ movie.name }}
+                    </div>
+                    <div class="col">
+                        {{ movie.synopsis}}
+                    </div>
+                    <div class="col">
+                        {{ movie.mainCast }}
+                    </div>
+                    <div class="col">
+                        {{ movie.director }}
+                    </div>
+                    <div class="col">
+                        {{ movie.year }}
+                    </div>
+                    <div class="col">
+                        {{ movie.rating }}
+                    </div>
+                   {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    {{ form_end(form) }}
+                </div>
+
+            <button class="btn">{{ button_label|default('Rate') }}</button>
+            <a href="{{ path('movie_index') }}">back to list</a>
+
+
+        </div>
+    </section>
+{% endblock %}

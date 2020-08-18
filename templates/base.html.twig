@@ -20,8 +20,14 @@
         </nav>
     </div>
 </header>
-{#--------------- Header Section Ends---------- #}
 
+
+{#--------------- Flash Messages--------- #}
+{% for message in app.flashes('success') %}
+<div class="alert alert-success">
+    {{ message }}
+</div>
+{% endfor %}
 
 
 {% block body %}{% endblock %}

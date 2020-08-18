@@ -18,7 +18,7 @@ class Movie
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private  $id;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -31,15 +31,14 @@ class Movie
     private $year;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    /**
+     * @ORM\Column(type="integer", nullable=false)
      * @Assert\Range(
      *      min = 1,
      *      max = 5,
      *      notInRangeMessage = "You must rate between {{ min }} and {{ max }}",
      * )
      */
+
     private $rating;
 
     /**
@@ -170,4 +169,10 @@ class Movie
 
         return $this;
     }
+
+    public function __toString(){
+        return $this->name;
+
+    }
+
 }

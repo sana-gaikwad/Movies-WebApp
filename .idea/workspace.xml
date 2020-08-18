@@ -26,27 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton">
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Director.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Director.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Genre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Genre.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/MovieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MovieType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/director/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/director/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/director/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/director/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/genre/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/genre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/genre/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/genre/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/homepage.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/movie/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,10 +142,14 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../code-symfony" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sana\Desktop\Symfony 5\movies_app\src\Form" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sana\Desktop\Symfony 5\movies_app\public\images" />
     </key>
@@ -224,10 +217,22 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="208" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1504.963@0.0.1504.963" timestamp="1597554837206" />
+    <state x="498" y="284" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597749993410">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="498" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1504.963@0.0.1504.963" timestamp="1597749993410" />
+    <state x="558" y="164" key="#com.intellij.ide.util.MemberChooser" timestamp="1597750794689">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="558" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1504.963@0.0.1504.963" timestamp="1597750794689" />
     <state x="589" y="247" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597404047143">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="589" y="247" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1504.963@0.0.1504.963" timestamp="1597404047143" />
+    <state x="483" y="237" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597755208092">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="483" y="237" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1504.963@0.0.1504.963" timestamp="1597755208092" />
     <state x="93" y="93" width="1319" height="777" key="DiffContextDialog" timestamp="1597462780290">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -240,10 +245,14 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="627" y="380" key="Github.ShareDialog/0.0.1504.963@0.0.1504.963" timestamp="1597399098237" />
-    <state x="495" y="205" key="NewPhpClassDialog" timestamp="1597403934267">
+    <state x="495" y="205" key="NewPhpClassDialog" timestamp="1597750665115">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="495" y="205" key="NewPhpClassDialog/0.0.1504.963@0.0.1504.963" timestamp="1597403934267" />
+    <state x="495" y="205" key="NewPhpClassDialog/0.0.1504.963@0.0.1504.963" timestamp="1597750665115" />
+    <state x="589" y="405" key="NewPhpFileDialog" timestamp="1597750066987">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="589" y="405" key="NewPhpFileDialog/0.0.1504.963@0.0.1504.963" timestamp="1597750066987" />
     <state x="240" y="57" key="SettingsEditor" timestamp="1597470366506">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -252,5 +261,9 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597580633275" />
+    <state x="415" y="206" key="search.everywhere.popup" timestamp="1597749829400">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="415" y="206" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1597749829400" />
   </component>
 </project>

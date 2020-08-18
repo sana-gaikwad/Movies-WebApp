@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Movie;
 use App\Form\MovieType;
+use App\Form\RateType;
 use App\Repository\MovieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,6 +24,39 @@ class MovieController extends AbstractController
     {
         return $this->render('movie/index.html.twig', [
             'movies' => $movieRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/list", name="movie_list", methods={"GET"})
+     */
+    public function list(MovieRepository $movieRepository): Response
+    {
+        return $this->render('movie/list.html.twig', [
+            'movies' => $movieRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/rate/{id}", name="movie_rate", methods={"GET","POST"})
+     */
+    public function rate(Request $request,Movie $movie): Response
+    {
+
+        $form = $this->createForm(RateType::class, $movie);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('success','Thank You, Your movie rating has been saved');
+
+            return $this->redirectToRoute('movie_list');
+        }
+
+        return $this->render('movie/review.html.twig', [
+            'movie' => $movie,
+            'form' => $form->createView(),
         ]);
     }
 
@@ -59,11 +93,14 @@ class MovieController extends AbstractController
         ]);
     }
 
+
+
     /**
      * @Route("/{id}/edit", name="movie_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Movie $movie): Response
     {
+        dd($movie);
         $form = $this->createForm(MovieType::class, $movie);
         $form->handleRequest($request);
 
@@ -92,4 +129,6 @@ class MovieController extends AbstractController
 
         return $this->redirectToRoute('movie_index');
     }
+
+
 }
