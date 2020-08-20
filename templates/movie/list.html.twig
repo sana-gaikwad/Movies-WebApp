@@ -6,20 +6,19 @@
 
     <section class="main">
         <div class ="container">
-            <h2>Movie list</h2>
+            <h2>All Movies</h2>
             <div class="table-responsive">
-            <table class="table table-hover table-fixed">
+            <table class="table" id="movie-list">
                 <thead>
                 <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Year</th>
-                    <th>Rating</th>
-                    <th>MainCast</th>
+                    <th>Cast</th>
                     <th>Director</th>
-                    <th>Synopsis</th>
                     <th>Genre</th>
-                    <th>Actions</th>
+                    <th>Rating</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,17 +26,31 @@
                     <tr>
 
                         <td>{{ movie.id }}</td>
-                        <td>{{ movie.name }}</td>
+                        <td id="title-name">{{ movie.name }}</td>
                         <td>{{ movie.year }}</td>
-                        <td>{{ movie.rating }}</td>
+
                         <td>{{ movie.maincast }}</td>
                         <td>{{ movie.director.name }} {{ movie.director.surname }}</td>
-                        <td>{{ movie.synopsis }}</td>
                         <td>
+                            {% for movieGenre in movie.genres %}
+                                {% if loop.first %}
+                                    {{ movieGenre.type }}
+                                {% else %}
+                                    {{ "/" }}{{movieGenre.type }}
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td id="star-rate">
+                            {% if movie.rating == 1 %}
+                            {{ movie.rating }}{{ " star" }}</td>
+                            {% else %}
+                                {{ movie.rating }}{{ " stars" }}
+                                {% endif %}
                         </td>
                         <td>
-                            <a href="{{ path('movie_rate', {'id': movie.id}) }}">Rate Movie</a>
+                            <a href="{{ path('movie_rate', {'id': movie.id}) }}">Review</a>
                         </td>
+
                     </tr>
                 {% else %}
                     <tr>

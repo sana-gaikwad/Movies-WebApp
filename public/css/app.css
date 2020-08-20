@@ -271,7 +271,9 @@ h3{
     color: #e5474b;
     font-size: 1.35em;
 }
-
+h5 {
+    font-style: italic;
+}
 p{
     display: block;
     margin: 0 0 2em 0;
@@ -316,6 +318,41 @@ p{
 .img-service img{
     width: 95%;
     height: 300px;
+}
+
+
+
+/*table*/
+#table-movies th, #table-genre th, #movie-list th{
+    background-color:#e5474b;
+    color: white;
+    text-align: center;
+}
+
+
+
+td {
+    font-family: 'open sans', arial, sans-serif;
+
+}
+
+
+
+#table-genre tr:nth-child(even), #table-movies tr:nth-child(even),#movie-list tr:nth-child(even) {background-color: #e7e5e5
+}
+#table-genre tr:nth-child(odd), #table-movies tr:nth-child(odd), #movie-list tr:nth-child(odd){background-color: #f8f6f6
+}
+
+#movie-list tr:hover{
+    background-color: #f1d4d4;
+}
+
+#title-name{
+    font-weight: bold;
+}
+
+#table-genre td{
+    text-align: center;
 }
 
 
