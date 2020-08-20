@@ -6,13 +6,15 @@
 <section class="main">
 
     <div class ="container">
-    <h1>Edit Director</h1>
+    <h2>Edit Director</h2>
 
-    {{ include('director/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('director_index') }}">back to list</a>
+  {{ include('director/_form.html.twig', {'button_label': 'Update'}) }}
 
     {{ include('director/_delete_form.html.twig') }}
+
+
+        <a href="{{ path('director_index') }}">back to list</a>
     </div>
 </section>
 {% endblock %}

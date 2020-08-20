@@ -6,9 +6,9 @@
 
     <section class="main">
         <div class ="container">
-    <h1>Movie index</h1>
-
-    <table class="table">
+    <h2>Movie index</h2>
+<div class="table-responsive">
+    <table class="table table-hover table-fixed">
         <thead>
             <tr>
                 <th>Id</th>
@@ -17,7 +17,7 @@
                 <th>Rating</th>
                 <th>MainCast</th>
                 <th>Synopsis</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -41,9 +41,10 @@
         {% endfor %}
         </tbody>
     </table>
-
-
-    <a href="{{ path('movie_new') }}">Create new</a>
+</div>
+    <div class="list">
+    <a href="{{ path('movie_new') }}" class="button alt">Create new</a>
+    </div>
         </div>
     </section>
 {% endblock %}

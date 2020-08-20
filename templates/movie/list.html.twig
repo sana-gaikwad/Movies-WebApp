@@ -6,9 +6,9 @@
 
     <section class="main">
         <div class ="container">
-            <h1>Movie list</h1>
-
-            <table class="table">
+            <h2>Movie list</h2>
+            <div class="table-responsive">
+            <table class="table table-hover table-fixed">
                 <thead>
                 <tr>
                     <th>Id</th>
@@ -19,7 +19,7 @@
                     <th>Director</th>
                     <th>Synopsis</th>
                     <th>Genre</th>
-                    <th>actions</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,7 +46,7 @@
                 {% endfor %}
                 </tbody>
             </table>
-
+            </div>
         </div>
     </section>
 {% endblock %}

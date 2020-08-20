@@ -218,12 +218,12 @@ ul.actions{
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.button.alt {
+.button.start {
     background-color: transparent;
     box-shadow: inset 0 0 0 2px #ffffff;
 }
 
-.button.alt:hover {
+.button.start:hover {
     background-color: #676767;
     text-decoration: none;
 }
@@ -240,6 +240,84 @@ ul.actions{
 #content-wrap {
     padding-bottom: 2.5rem;    /* Footer height */
 }
+
+/*Service section */
+
+.bg-light {
+    background: #f8f9fa !important;
+}
+
+.ftco-section {
+    padding: 30px;
+    position: relative;
+    padding: 6em 0 4em 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    color: #e5474b;
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+h3{
+    color: #e5474b;
+    font-size: 1.35em;
+}
+
+p{
+    display: block;
+    margin: 0 0 2em 0;
+    color: #717171;
+    font-family: 'open sans', arial, sans-serif;
+    text-align: justify;
+    padding: 0px 10px 10px 0px;
+
+}
+.icon{
+    color: #b3b3b3;
+    font-size: 3em;
+    text-decoration: none;
+    padding: 15px 0px 15px 0px;
+    margin: 10px;
+}
+.button.alt{
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px #e5474b;
+    color: #e5474b !important;
+    margin-bottom: 10px;
+    border: none;
+
+}
+.button.alt:hover {
+    background-color: #f1d4d4;
+    text-decoration: none;
+
+}
+
+
+#sub-service{
+    background: linear-gradient(to right, #f3f3f3 0%, #f3f3f3 50%, #f7f7f7 0%, #f7f7f7 100%);
+}
+
+.img-service{
+    display: block;
+    margin: 0 0 2em 0;
+    align-content: center;
+}
+
+.img-service img{
+    width: 95%;
+    height: 300px;
+}
+
 
 /*footer section */
 footer {

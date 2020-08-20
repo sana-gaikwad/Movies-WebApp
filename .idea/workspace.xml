@@ -26,13 +26,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton">
+      <change afterPath="$PROJECT_DIR$/public/images/director-img.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/genre-img.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MovieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MovieType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/director/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/genre/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/genre/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/homepage.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/movie/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/list.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,6 +181,7 @@
       <workItem from="1597399752076" duration="328000" />
       <workItem from="1597400094065" duration="1059000" />
       <workItem from="1597401171690" duration="6361000" />
+      <workItem from="1597907459984" duration="9390000" />
     </task>
     <task id="LOCAL-00001" summary="Web app Skeleton">
       <created>1597398724254</created>
@@ -218,10 +237,10 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="498" y="284" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1504.963@0.0.1504.963" timestamp="1597749993410" />
-    <state x="558" y="164" key="#com.intellij.ide.util.MemberChooser" timestamp="1597750794689">
+    <state x="558" y="164" key="#com.intellij.ide.util.MemberChooser" timestamp="1597895404142">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="558" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1504.963@0.0.1504.963" timestamp="1597750794689" />
+    <state x="558" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1504.963@0.0.1504.963" timestamp="1597895404142" />
     <state x="589" y="247" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597404047143">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -242,6 +261,10 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="627" y="380" key="Github.ShareDialog/0.0.1504.963@0.0.1504.963" timestamp="1597399098237" />
+    <state x="333" y="217" key="IDE.errors.dialog" timestamp="1597893423694">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="333" y="217" key="IDE.errors.dialog/0.0.1504.963@0.0.1504.963" timestamp="1597893423694" />
     <state x="495" y="205" key="NewPhpClassDialog" timestamp="1597750665115">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
@@ -254,10 +277,10 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="240" y="57" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1597470366506" />
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1597758321160">
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1597893246201">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597758321160" />
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597893246201" />
     <state x="415" y="206" width="670" height="58" key="search.everywhere.popup" timestamp="1597890030788">
       <screen x="0" y="0" width="1504" height="963" />
     </state>

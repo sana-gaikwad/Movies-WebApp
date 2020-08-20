@@ -2,18 +2,86 @@
 
 {% block body %}
 
-    {#--------------- Banner Section---------- #}
+    {# Banner Section#}
 
     <section id="banner">
         <div class="inner">
             <h1>The Open Movie Database </h1>
 
             <ul class="actions">
-                <li><a href="{{ path('movie_list') }}" class="button alt">Get Started</a></li>
+                <li><a href="{{ path('movie_list') }}" class="button start">Explore</a></li>
             </ul>
         </div>
     </section>
-    {#--------------- Banner Section ends---------- #}
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col md-4 ">
+                    <span class="icon fa fa-laptop"></span>
+                    <header>
+                    <h3>New Movie</h3>
+                    </header>
+                    <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna lorem ullamcorper laoreet, lectus arcu.</p>
+                    <div>
+                        <a class="button alt" href="{{ path('movie_new') }}">Create Movie</a>
+                    </div>
+
+                </div>
+                <div class="col md-4 ">
+                    <span class="icon fa fa-edit"></span>
+                    <header>
+                    <h3>Edit Movies</h3>
+                    </header>
+                    <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna lorem ullamcorper laoreet, lectus arcu.</p>
+                    <div>
+                        <a class="button alt" href="{{ path('movie_index') }}">Update Movie</a>
+                    </div>
+                </div>
+                <div class="col md-4">
+                    <span class="icon fa fa-star"></span>
+                    <header>
+                    <h3>Movie Review</h3>
+                    </header>
+                    <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna lorem ullamcorper laoreet, lectus arcu.</p>
+                    <div>
+                        <a class="button alt" href="{{ path('movie_list') }}">Rate Movie</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="ftco-section " id="sub-service">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-lg-6">
+                    <h4>Genres</h4>
+                    <div class="img-service">
+                        <img src="{{ asset('images/genre-img.jpeg') }}" id="image-fit">
+                    </div>
+                    <p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
+
+                <div>
+                    <a class="button alt" href="{{ path('genre_index') }}">Click Here</a>
+                </div>
+                </div>
+                <div class="col-lg-6">
+                    <h4>Directors</h4>
+                    <div class="img-service">
+                        <img src="{{ asset('images/director-img.jpeg') }}" id="image-fit">
+                    </div>
+                    <p>Cumsan mollis eros. Pellentesque a diam sit amet mi magna ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet lorem ipsum feugiat tempus.</p>
+
+                <div>
+                    <a class="button alt" href="{{ path('director_index') }}">Click Here</a>
+                </div>
+                </div>
+                </div>
+            </div>
+    </section>
 
 
 {% endblock %}

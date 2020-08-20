@@ -10,9 +10,8 @@
 
         {{ include('movie/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('movie_index') }}">back to list</a>
-
     {{ include('movie/_delete_form.html.twig') }}
+        <a href="{{ path('movie_index') }}">back to list</a>
     </div>
 </section>
 {% endblock %}

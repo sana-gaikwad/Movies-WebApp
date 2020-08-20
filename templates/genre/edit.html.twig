@@ -6,13 +6,12 @@
 <section class="main">
 
     <div class ="container">
-    <h1>Edit Genre</h1>
+    <h2>Edit Genre</h2>
 
     {{ include('genre/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('genre_index') }}">back to list</a>
-
     {{ include('genre/_delete_form.html.twig') }}
+        <a href="{{ path('genre_index') }}">back to list</a>
     </div>
 </section>
 {% endblock %}

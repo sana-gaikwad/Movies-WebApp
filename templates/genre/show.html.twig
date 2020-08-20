@@ -6,7 +6,7 @@
 <section class="main">
 
     <div class ="container">
-    <h1>Genre</h1>
+    <h2>{{ genre.type }}</h2>
 
     <table class="table">
         <tbody>
@@ -18,14 +18,27 @@
                 <th>Type</th>
                 <td>{{ genre.type }}</td>
             </tr>
+            <tr>
+                <th>Movies</th>
+                <td>
+                    {% for movieGenre in genre.movies %}
+                        <li>{{ movieGenre.name }}</li>
+                        {% else %}
+                        {{ "No movies found" }}
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('genre_index') }}">back to list</a>
 
-    <a href="{{ path('genre_edit', {'id': genre.id}) }}">edit</a>
+    <div>
+        <a href="{{ path('genre_edit', {'id': genre.id}) }}" class="button alt">edit</a>
+    </div>
+
 
     {{ include('genre/_delete_form.html.twig') }}
+        <a href="{{ path('genre_index') }}">back to list</a>
     </div>
 </section>
 {% endblock %}
