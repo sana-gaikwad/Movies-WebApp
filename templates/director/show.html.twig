@@ -21,6 +21,12 @@
             <tr>
                 <th>Surname</th>
                 <td>{{ director.surname }}</td>
+            <tr>
+                <th>Movies {{ director.movies.count }}</th>
+                    {% for movie in director.movies %}
+                <td>{{ movie.name }}</td>
+                    {% endfor %}
+
             </tr>
         </tbody>
     </table>

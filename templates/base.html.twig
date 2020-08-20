@@ -12,6 +12,8 @@
 </head>
 <body>
 {#--------------- Header Section---------- #}
+<div id = "page-container">
+    <div id = "content-wrap">
 <header id="header">
     <div class="inner">
         <a href="#" class="logo">Movies Now.</a>
@@ -31,10 +33,11 @@
 
 
 {% block body %}{% endblock %}
+    </div>
 <footer class="mt-5 p-3 text-center">
     Made with <i style="color: #e5474b;" class="fa fa-heart"></i> Sana Gaikwad <a style="color: #e5474b; text-decoration: underline;" href="https://github.com/SanaGaikwad/Movies-WebApp/tree/master" target="_blank">GitHub</a>
 </footer>
-
+</div>
 {% block javascripts %}{% endblock %}
 
 </body>

@@ -26,16 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/MovieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MovieType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/homepage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/director/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/director/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/movie/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,13 +254,13 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="240" y="57" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1597470366506" />
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1597580633275">
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1597758321160">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597580633275" />
-    <state x="415" y="206" key="search.everywhere.popup" timestamp="1597749829400">
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597758321160" />
+    <state x="415" y="206" width="670" height="58" key="search.everywhere.popup" timestamp="1597890030788">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="415" y="206" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1597749829400" />
+    <state x="415" y="206" width="670" height="58" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1597890030788" />
   </component>
 </project>

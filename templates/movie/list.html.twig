@@ -18,6 +18,7 @@
                     <th>MainCast</th>
                     <th>Director</th>
                     <th>Synopsis</th>
+                    <th>Genre</th>
                     <th>actions</th>
                 </tr>
                 </thead>
@@ -29,11 +30,12 @@
                         <td>{{ movie.name }}</td>
                         <td>{{ movie.year }}</td>
                         <td>{{ movie.rating }}</td>
-                        <td>{{ movie.mainCast }}</td>
+                        <td>{{ movie.maincast }}</td>
                         <td>{{ movie.director.name }} {{ movie.director.surname }}</td>
                         <td>{{ movie.synopsis }}</td>
                         <td>
-                          {#<a href="{{ path('movie_show', {'id': movie.id}) }}">show</a> #}
+                        </td>
+                        <td>
                             <a href="{{ path('movie_rate', {'id': movie.id}) }}">Rate Movie</a>
                         </td>
                     </tr>
