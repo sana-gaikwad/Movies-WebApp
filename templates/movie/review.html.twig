@@ -7,6 +7,7 @@
 
         <div class ="container">
             <h2>{{ movie.name }}</h2>
+
             <table class="table" id="table-movies">
                 <tbody>
                 <tr>
@@ -48,15 +49,37 @@
                 </tbody>
             </table>
             <br>
-                    <h5>Provide your review score</h5>
-                   {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                    <button type="submit" class="button alt">Submit</button>
-                    {{ form_end(form) }}
+            {# Rating form #}
+            <h5>Provide a Movie Review</h5>
+            <br>
+            <div class="container">
+                <div class="star-rating">
+                    <form  action="{{ path('review_score',{'id': movie.id}) }}" method="post">
+                        <div class="stars">
+                            <input type="radio" name='stars' value='5' id='five' class='star'  >
+                            <label for="five"><i class='fa fa-star'></i></label>
+                            <input type="radio" name='stars' value='4' id='four' class='star'>
+                            <label for="four"><i class='fa fa-star'></i></label>
+                            <input type="radio" name='stars' value='3' id='three' class='star'>
+                            <label for="three"><i class='fa fa-star'></i></label>
+                            <input type="radio" name='stars' value='2' id='two' class='star'>
+                            <label for="two"><i class='fa fa-star'></i></label>
+                            <input type="radio" name='stars' value='1' id='one' class='star' checked >
+                            <label for="one"><i class='fa fa-star '></i></label>
+                        </div>
+                        <div id="block-star">
+                            <input type="submit" name="submit" value="Submit" class="button alt" id="rate-submit" />
+                        </div>
 
-            <a href="{{ path('movie_list') }}">Browse list</a>
 
 
+
+                    </form>
+
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}
+
+

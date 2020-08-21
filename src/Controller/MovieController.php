@@ -40,24 +40,25 @@ class MovieController extends AbstractController
     /**
      * @Route("/rate/{id}", name="movie_rate", methods={"GET","POST"})
      */
-    public function rate(Request $request,Movie $movie): Response
+    public function rate(Request $request,Movie $movie, $id): Response
     {
-
-        $form = $this->createForm(RateType::class, $movie);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('success','Thank You, Your movie rating has been saved');
-
-            return $this->redirectToRoute('movie_list');
-        }
-
         return $this->render('movie/review.html.twig', [
-            'movie' => $movie,
-            'form' => $form->createView(),
+            'movie' => $movie
+
         ]);
+    }
+
+    /**
+     * @Route("/review/{id}", name="review_score", methods={"GET","POST"})
+     */
+    public function review(Request $request, Movie $movie): Response
+    {
+            $rating = $request->request->get('stars');
+            $movie->setRating($rating);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($movie);
+            $entityManager->flush();
+            return $this->redirectToRoute('movie_list');
     }
 
     /**

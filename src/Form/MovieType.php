@@ -6,6 +6,7 @@ use App\Entity\Genre;
 use App\Entity\Movie;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,7 +17,15 @@ class MovieType extends AbstractType
         $builder
             ->add('name')
             ->add('year')
-            ->add('rating')
+            ->add('rating', ChoiceType::class,[
+                 'choices' =>[
+                     '1 star' => 1,
+                     '2 stars' => 2,
+                     '3 stars' => 3,
+                     '4 stars' => 4,
+                     '5 stars' => 5,
+                 ]
+             ])
             ->add('mainCast')
             ->add('synopsis')
             ->add('director')
