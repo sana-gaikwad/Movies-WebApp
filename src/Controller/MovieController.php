@@ -58,6 +58,7 @@ class MovieController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($movie);
             $entityManager->flush();
+            $this->addFlash('success','Thank You, Your movie rating has been saved');
             return $this->redirectToRoute('movie_list');
     }
 
