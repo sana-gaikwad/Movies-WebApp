@@ -31,6 +31,10 @@
                     <td>{{ movie.mainCast }}</td>
                 </tr>
                 <tr>
+                    <th>Director</th>
+                    <td>{{ movie.director.name }} {{ movie.director.surname }}</td>
+                </tr>
+                <tr>
                     <th>Synopsis</th>
                     <td>{{ movie.synopsis }}</td>
                 </tr>
@@ -81,5 +85,7 @@
         </div>
     </section>
 {% endblock %}
+
+
 
 

@@ -2,6 +2,8 @@
 
 namespace App\Repository;
 
+use App\Entity\Director;
+use App\Entity\Genre;
 use App\Entity\Movie;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -47,4 +49,6 @@ class MovieRepository extends ServiceEntityRepository
         ;
     }
     */
+    //function to save a Movie to the database using API
+
 }

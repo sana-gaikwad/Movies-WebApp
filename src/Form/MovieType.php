@@ -17,23 +17,23 @@ class MovieType extends AbstractType
         $builder
             ->add('name')
             ->add('year')
-            ->add('rating', ChoiceType::class,[
-                 'choices' =>[
-                     '1 star' => 1,
-                     '2 stars' => 2,
-                     '3 stars' => 3,
-                     '4 stars' => 4,
-                     '5 stars' => 5,
-                 ]
-             ])
             ->add('mainCast')
             ->add('synopsis')
             ->add('director')
             ->add('genres', EntityType::class,[
-                'class' => Genre::class, //looks for choices from this Entity Class
+                'class' => Genre::class,
                 'choice_label'=> 'type',
                 'multiple'=> true,
                 'expanded' => true,
+            ])
+            ->add('rating', ChoiceType::class,[
+                'choices' =>[
+                    '1 star' => 1,
+                    '2 stars' => 2,
+                    '3 stars' => 3,
+                    '4 stars' => 4,
+                    '5 stars' => 5,
+                ]
             ])
         ;
     }

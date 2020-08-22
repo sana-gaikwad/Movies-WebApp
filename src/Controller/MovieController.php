@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Director;
+use App\Entity\Genre;
 use App\Entity\Movie;
 use App\Form\MovieType;
 use App\Form\RateType;
@@ -19,6 +21,8 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class MovieController extends AbstractController
 {
+
+
     /**
      * @Route("/", name="movie_index", methods={"GET"})
      */
@@ -71,18 +75,100 @@ class MovieController extends AbstractController
     /**
      * @Route("/sync", name="data_sync", methods={"GET","POST"})
      */
-    public function sync(): JsonResponse
+    public function sync(Request $request): JsonResponse
     {
         $url = 'https://www.eventcinemas.com.au/Movies/GetNowShowing';
         $data = file_get_contents($url); //get the json data
-        $dataObj = json_decode($data); //convert to an object
-        
+        $dataArr = json_decode($data,true); //convert to an associative array
+       //dd($dataArr);
+
+        //Parsing Array to get id, Movie name, year, rating, cast, synopsis, director, genre
+        foreach ($dataArr as $key=> $value) {
+            if ($key == 'Data') {
+                foreach ($value as $key => $movie) {
+                    if($key == 'Movies') {
+                        foreach ($movie as $key => $list)
+                        {
+                            $movieId = 0;
+                            $movieName=""; $movieYear = "";$movieCast= ""; $movieDesc=""; $movieGen=""; $movieDirect="";
+                            foreach ($list as $key => $details){
+
+                                if($key == 'Id'){
+                                   $movieId = $details;
+                                }
+                                if($key == 'Name'){
+                                    $movieName = $details;
+
+                                }
+                                if ($key == 'ReleasedAt'){
+                                    $movieYear = $details;
+
+                                }
+                                if ($key == 'MainCast'){
+                                    $movieCast = $details;
+
+                                }
+                                if ($key == 'Director'){
+                                    $movieDirect = $details;
+
+
+                                }
+                                if ($key == 'Genres'){
+                                    $movieGen = $details;
+
+                                }
+                                if ($key == 'Synopsis'){
+                                    $movieDesc = $details;
+                                }
+                            }
+
+                            //validating for null values
+                            if (($movieCast || $movieDirect || $movieDesc) == null)
+                            {
+                                $movieCast = $movieDirect = $movieDesc = " ";
+                            }
+                            
+                            //Adding values to Genre Entity
+                            $movieGenre = new Genre();
+                            $movieGenre->setType($movieGen);
+
+                            //Adding values to Genre Entity
+                            $director = new Director();
+                            $director-> setName($movieDirect);
+                            $director ->setSurname(".");
+
+                            //Adding values to Genre Entity
+                            $newMovie = new Movie();
+                            $newMovie-> setName($movieName);
+                            $newMovie-> setYear($movieYear);
+                            $newMovie -> setRating(0);
+                            $newMovie -> setSynopsis($movieDesc);
+                            $newMovie -> setMainCast($movieCast);
+                            $newMovie -> setDirector($director);
+                            $newMovie -> addGenre($movieGenre);
+
+
+                            $entityManager = $this->getDoctrine()->getManager();
+                            $entityManager->persist($director);
+                            $entityManager->persist($movieGenre);
+                            $entityManager->persist($newMovie);
+                            $entityManager->flush();
+
+
+                        }
+                    }
+
+                }
+
+            }
+
+        }
         return new JsonResponse(['status' => 'Customer created!'], Response::HTTP_CREATED);
 
     }
 
     /**
-     * @Route("/new", name="movie_new", methods={"POST"})
+     * @Route("/new", name="movie_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {

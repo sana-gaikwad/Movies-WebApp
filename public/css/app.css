@@ -393,10 +393,9 @@ footer {
     padding: 5px;
 }
 
-input{
+.stars input{
     display: none;
 }
-
 i {
     transition: all .3s;
 }

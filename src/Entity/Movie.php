@@ -22,11 +22,13 @@ class Movie
 
     /**
      * @ORM\Column(type="string", length=255)
+     *
+     *
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=5, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $year;
 
@@ -42,12 +44,12 @@ class Movie
     private $rating;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $mainCast;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $synopsis;
 
