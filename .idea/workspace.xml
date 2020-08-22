@@ -27,14 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Director.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Director.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/MovieType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/MovieType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MovieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MovieRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/review.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/review.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +160,7 @@
       <workItem from="1597399752076" duration="328000" />
       <workItem from="1597400094065" duration="1059000" />
       <workItem from="1597401171690" duration="6361000" />
-      <workItem from="1597907459984" duration="85200000" />
+      <workItem from="1597907459984" duration="86639000" />
     </task>
     <task id="LOCAL-00001" summary="Web app Skeleton">
       <created>1597398724254</created>
@@ -267,9 +260,9 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1598005766155" />
-    <state x="415" y="206" width="670" height="58" key="search.everywhere.popup" timestamp="1597890030788">
+    <state x="415" y="206" width="672" height="160" key="search.everywhere.popup" timestamp="1598099316099">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="415" y="206" width="670" height="58" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1597890030788" />
+    <state x="415" y="206" width="672" height="160" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1598099316099" />
   </component>
 </project>

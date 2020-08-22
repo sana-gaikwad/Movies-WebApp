@@ -123,12 +123,9 @@ class MovieController extends AbstractController
                             }
 
                             //validating for null values
-                            if (($movieCast || $movieDirect || $movieDesc) == null)
+                            if (($movieCast && $movieDirect && $movieDesc && $movieName && $movieGen ) != null)
                             {
-                                $movieCast = $movieDirect = $movieDesc = " ";
-                            }
-                            
-                            //Adding values to Genre Entity
+                                //Adding values to Genre Entity
                             $movieGenre = new Genre();
                             $movieGenre->setType($movieGen);
 
@@ -144,6 +141,7 @@ class MovieController extends AbstractController
                             $newMovie -> setRating(0);
                             $newMovie -> setSynopsis($movieDesc);
                             $newMovie -> setMainCast($movieCast);
+
                             $newMovie -> setDirector($director);
                             $newMovie -> addGenre($movieGenre);
 
@@ -154,6 +152,7 @@ class MovieController extends AbstractController
                             $entityManager->persist($newMovie);
                             $entityManager->flush();
 
+                        }
 
                         }
                     }
