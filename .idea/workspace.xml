@@ -26,9 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton">
+      <change beforePath="$PROJECT_DIR$/.idea/movies_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/movies_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/test/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +132,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/property-info" />
       <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
       <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1g5JcO8ZIjLw2c6xKt4sKJP2PJh" />
@@ -159,7 +169,7 @@
       <workItem from="1597399752076" duration="328000" />
       <workItem from="1597400094065" duration="1059000" />
       <workItem from="1597401171690" duration="6361000" />
-      <workItem from="1597907459984" duration="52316000" />
+      <workItem from="1597907459984" duration="61657000" />
     </task>
     <task id="LOCAL-00001" summary="Web app Skeleton">
       <created>1597398724254</created>
@@ -243,22 +253,22 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="333" y="217" key="IDE.errors.dialog/0.0.1504.963@0.0.1504.963" timestamp="1597893423694" />
-    <state x="495" y="205" key="NewPhpClassDialog" timestamp="1597750665115">
+    <state x="495" y="205" key="NewPhpClassDialog" timestamp="1598061184359">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="495" y="205" key="NewPhpClassDialog/0.0.1504.963@0.0.1504.963" timestamp="1597750665115" />
-    <state x="589" y="405" key="NewPhpFileDialog" timestamp="1597750066987">
+    <state x="495" y="205" key="NewPhpClassDialog/0.0.1504.963@0.0.1504.963" timestamp="1598061184359" />
+    <state x="589" y="405" key="NewPhpFileDialog" timestamp="1598060965796">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="589" y="405" key="NewPhpFileDialog/0.0.1504.963@0.0.1504.963" timestamp="1597750066987" />
+    <state x="589" y="405" key="NewPhpFileDialog/0.0.1504.963@0.0.1504.963" timestamp="1598060965796" />
     <state x="240" y="57" key="SettingsEditor" timestamp="1597470366506">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="240" y="57" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1597470366506" />
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1597936744632">
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1598005766155">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1597936744632" />
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1598005766155" />
     <state x="415" y="206" width="670" height="58" key="search.everywhere.popup" timestamp="1597890030788">
       <screen x="0" y="0" width="1504" height="963" />
     </state>

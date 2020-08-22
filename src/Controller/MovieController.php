@@ -5,8 +5,10 @@ namespace App\Controller;
 use App\Entity\Movie;
 use App\Form\MovieType;
 use App\Form\RateType;
+use App\Service\MovieService;
 use App\Repository\MovieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -54,6 +56,10 @@ class MovieController extends AbstractController
     public function review(Request $request, Movie $movie): Response
     {
             $rating = $request->request->get('stars');
+            if (empty($rating))
+            {
+                throw new NotFoundHttpException('Expecting mandatory parameters!');
+            }
             $movie->setRating($rating);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($movie);
@@ -63,7 +69,20 @@ class MovieController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="movie_new", methods={"GET","POST"})
+     * @Route("/sync", name="data_sync", methods={"GET","POST"})
+     */
+    public function sync(): JsonResponse
+    {
+        $url = 'https://www.eventcinemas.com.au/Movies/GetNowShowing';
+        $data = file_get_contents($url); //get the json data
+        $dataObj = json_decode($data); //convert to an object
+        
+        return new JsonResponse(['status' => 'Customer created!'], Response::HTTP_CREATED);
+
+    }
+
+    /**
+     * @Route("/new", name="movie_new", methods={"POST"})
      */
     public function new(Request $request): Response
     {
@@ -131,6 +150,7 @@ class MovieController extends AbstractController
 
         return $this->redirectToRoute('movie_index');
     }
+
 
 
 }

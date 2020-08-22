@@ -2,3 +2,8 @@ framework:
     test: true
     session:
         storage_id: session.storage.mock_file
+
+    http_client:
+        max_host_connections: 5
+        default_options:
+            max_redirects: 3
