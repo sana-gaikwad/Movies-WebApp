@@ -87,7 +87,7 @@ class MovieController extends AbstractController
        //dd($dataArr);
 
         try {
-            //Parsing Array to get id, Movie name, year, rating, cast, synopsis, director, genre
+            //Parsing Array to get Movie data to load into db
             foreach ($dataArr as $key=> $value) {
                 if ($key == 'Data') {
                     foreach ($value as $key => $movie) {
@@ -151,7 +151,7 @@ class MovieController extends AbstractController
                                     //validating for null values
                                     if (($movieCast && $movieDirect && $movieDesc && $movieName && $movieGen ) != null){
 
-                                        //Adding values to Genre Entity
+
                                         $newMovie = new Movie();
                                         $newMovie-> setName($movieName);
                                         $newMovie-> setYear($movieYear);
@@ -160,7 +160,8 @@ class MovieController extends AbstractController
                                         $newMovie -> setMainCast($movieCast);
                                         $newMovie -> setCode($movieId);
 
-                                        if (!$res) // if director does not exist then create
+                                        // if director does not exist then add it to database
+                                        if (!$res)
                                         {
                                             $director = new Director();
                                             $director->setName($movieDirect);
@@ -179,7 +180,8 @@ class MovieController extends AbstractController
                                             $newMovie->setDirector($dir);
                                         }
 
-                                        if(!$resData)//if genre does not exist
+                                        //if genre does not exist then add it to the database
+                                        if(!$resData)
                                         {
                                             $movieGenre = new Genre();
                                             $movieGenre->setType($movieGen);
@@ -208,7 +210,7 @@ class MovieController extends AbstractController
                 }
 
             }
-            return new JsonResponse(['status' => 'Customer created!'], Response::HTTP_CREATED);
+            return new JsonResponse(['status' => 'Movies Synced'], Response::HTTP_CREATED);
         }
         catch (Exception $e ){
 

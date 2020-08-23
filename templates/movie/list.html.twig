@@ -42,7 +42,9 @@
                         </td>
                         <td id="star-rate">
                             {% if movie.rating == 1 %}
-                            {{ movie.rating }}{{ " star" }}</td>
+                            {{ movie.rating }}{{ " star" }}
+                            {% elseif movie.rating == 0 %}
+                            {{"No Rating" }}</td>
                             {% else %}
                                 {{ movie.rating }}{{ " stars" }}
                                 {% endif %}
