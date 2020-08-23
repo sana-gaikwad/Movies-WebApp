@@ -30,7 +30,7 @@ A simple online movies database website application created using Symfony 5 PhP 
 This project lets you maintain a movie database and provides you with the flexibility to create, update and delete movies. 
 
 ## Technologies
-* Symfony 5 PhP framework.
+* Symfony 5 PhP MVC framework.
 * Doctrine
 
 ## Setup
