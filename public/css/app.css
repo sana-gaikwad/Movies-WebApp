@@ -318,7 +318,7 @@ p{
     align-content: center;
 }
 
-.img-service img{
+#image-fit{
     width: 95%;
     height: 300px;
 }

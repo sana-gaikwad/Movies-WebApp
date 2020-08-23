@@ -47,4 +47,14 @@ class GenreRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findGenreByType($type): ?Genre
+    {
+        return $this->createQueryBuilder('d')
+            ->andWhere('d.type = :type')
+            ->setParameter('type', $type)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 }

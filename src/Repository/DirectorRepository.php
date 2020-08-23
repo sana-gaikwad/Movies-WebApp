@@ -47,4 +47,15 @@ class DirectorRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    public function findDirectorByName($name): ?Director
+    {
+        return $this->createQueryBuilder('d')
+            ->andWhere('d.name = :name')
+            ->setParameter('name', $name)
+            ->getQuery()
+            ->getOneOrNullResult()
+            ;
+    }
 }

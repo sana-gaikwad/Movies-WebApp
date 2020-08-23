@@ -28,7 +28,8 @@
         "symfony/yaml": "5.1.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
-      "ext-json": "*"
+      "ext-json": "*",
+      "ext-mysqli": "*"
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.20",

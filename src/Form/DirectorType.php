@@ -13,7 +13,7 @@ class DirectorType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('surname')
+
         ;
     }
 

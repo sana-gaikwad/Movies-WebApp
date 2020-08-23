@@ -20,6 +20,7 @@ class MovieType extends AbstractType
             ->add('mainCast')
             ->add('synopsis')
             ->add('director')
+            ->add('code')
             ->add('genres', EntityType::class,[
                 'class' => Genre::class,
                 'choice_label'=> 'type',

@@ -54,7 +54,7 @@ class Movie
     private $synopsis;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Director::class, inversedBy="movies")
+     * @ORM\ManyToOne(targetEntity=Director::class, inversedBy="movies" )
      * @ORM\JoinColumn(nullable=false)
      */
     private $director;
@@ -63,6 +63,11 @@ class Movie
      * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="movies")
      */
     private $genres;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $code;
 
     public function __construct()
     {
@@ -177,5 +182,21 @@ class Movie
         return $this->name;
 
     }
+
+    public function getCode(): ?int
+    {
+        return $this->code;
+    }
+
+    public function setCode(int $code): self
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+
+
+
 
 }

@@ -30,7 +30,7 @@
                         <td>{{ movie.year }}</td>
 
                         <td>{{ movie.maincast }}</td>
-                        <td>{{ movie.director.name }} {{ movie.director.surname }}</td>
+                        <td>{{ movie.director.name }}</td>
                         <td>
                             {% for movieGenre in movie.genres %}
                                 {% if loop.first %}

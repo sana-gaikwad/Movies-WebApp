@@ -10,6 +10,7 @@ use App\Form\RateType;
 use App\Service\MovieService;
 use App\Repository\MovieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -75,94 +76,144 @@ class MovieController extends AbstractController
     /**
      * @Route("/sync", name="data_sync", methods={"GET","POST"})
      */
-    public function sync(Request $request): JsonResponse
+    public function sync(Request $request, MovieRepository $movieRepository): JsonResponse
     {
         $url = 'https://www.eventcinemas.com.au/Movies/GetNowShowing';
         $data = file_get_contents($url); //get the json data
+
         $dataArr = json_decode($data,true); //convert to an associative array
+        $conn = $this->getDoctrine()->getConnection();
+        $entityManager = $this->getDoctrine()->getManager();
        //dd($dataArr);
 
-        //Parsing Array to get id, Movie name, year, rating, cast, synopsis, director, genre
-        foreach ($dataArr as $key=> $value) {
-            if ($key == 'Data') {
-                foreach ($value as $key => $movie) {
-                    if($key == 'Movies') {
-                        foreach ($movie as $key => $list)
-                        {
-                            $movieId = 0;
-                            $movieName=""; $movieYear = "";$movieCast= ""; $movieDesc=""; $movieGen=""; $movieDirect="";
-                            foreach ($list as $key => $details){
-
-                                if($key == 'Id'){
-                                   $movieId = $details;
-                                }
-                                if($key == 'Name'){
-                                    $movieName = $details;
-
-                                }
-                                if ($key == 'ReleasedAt'){
-                                    $movieYear = $details;
-
-                                }
-                                if ($key == 'MainCast'){
-                                    $movieCast = $details;
-
-                                }
-                                if ($key == 'Director'){
-                                    $movieDirect = $details;
-
-
-                                }
-                                if ($key == 'Genres'){
-                                    $movieGen = $details;
-
-                                }
-                                if ($key == 'Synopsis'){
-                                    $movieDesc = $details;
-                                }
-                            }
-
-                            //validating for null values
-                            if (($movieCast && $movieDirect && $movieDesc && $movieName && $movieGen ) != null)
+        try {
+            //Parsing Array to get id, Movie name, year, rating, cast, synopsis, director, genre
+            foreach ($dataArr as $key=> $value) {
+                if ($key == 'Data') {
+                    foreach ($value as $key => $movie) {
+                        if($key == 'Movies') {
+                            foreach ($movie as $key => $list)
                             {
-                                //Adding values to Genre Entity
-                            $movieGenre = new Genre();
-                            $movieGenre->setType($movieGen);
+                                $movieId = 0;
+                                $movieName=""; $movieYear = "";$movieCast= ""; $movieDesc=""; $movieGen=""; $movieDirect="";
+                                foreach ($list as $key => $details){
 
-                            //Adding values to Genre Entity
-                            $director = new Director();
-                            $director-> setName($movieDirect);
-                            $director ->setSurname(".");
+                                    if($key == 'Id'){
+                                        $movieId = $details;
+                                    }
+                                    if($key == 'Name'){
+                                        $movieName = $details;
 
-                            //Adding values to Genre Entity
-                            $newMovie = new Movie();
-                            $newMovie-> setName($movieName);
-                            $newMovie-> setYear($movieYear);
-                            $newMovie -> setRating(0);
-                            $newMovie -> setSynopsis($movieDesc);
-                            $newMovie -> setMainCast($movieCast);
+                                    }
+                                    if ($key == 'ReleasedAt'){
+                                        $movieYear = $details;
 
-                            $newMovie -> setDirector($director);
-                            $newMovie -> addGenre($movieGenre);
+                                    }
+                                    if ($key == 'MainCast'){
+                                        $movieCast = $details;
+
+                                    }
+                                    if ($key == 'Director'){
+                                        $movieDirect = $details;
 
 
-                            $entityManager = $this->getDoctrine()->getManager();
-                            $entityManager->persist($director);
-                            $entityManager->persist($movieGenre);
-                            $entityManager->persist($newMovie);
-                            $entityManager->flush();
+                                    }
+                                    if ($key == 'Genres'){
+                                        $movieGen = $details;
 
+                                    }
+                                    if ($key == 'Synopsis'){
+                                        $movieDesc = $details;
+                                    }
+                                }
+
+                                //query to check if movie exists in the database
+                                $sql = "SELECT * FROM Movie where Movie.code = '$movieId'";
+                                $statement = $conn->prepare($sql);
+                                $statement->execute();
+                                $result = ($statement->fetchAll());
+
+                                //query to check if genre exists
+                                $sqlGen = "SELECT * FROM Genre WHERE Genre.type = '$movieGen'";
+                                $state = $conn->prepare($sqlGen);
+                                $state->execute();
+                                $resData = ($state->fetchAll());
+
+                                //query to check if director exists
+                                $sqlDirect = ' SELECT * FROM Director WHERE Director.name like "$movieDirect" ' ;
+                                $stm = $conn->prepare($sqlDirect);
+                                $stm->execute();
+                                $res = ($stm->fetchAll());
+
+                                //check if movie exists
+                                if (!$result )
+                                {
+                                    //validating for null values
+                                    if (($movieCast && $movieDirect && $movieDesc && $movieName && $movieGen ) != null){
+
+                                        //Adding values to Genre Entity
+                                        $newMovie = new Movie();
+                                        $newMovie-> setName($movieName);
+                                        $newMovie-> setYear($movieYear);
+                                        $newMovie -> setRating(0);
+                                        $newMovie -> setSynopsis($movieDesc);
+                                        $newMovie -> setMainCast($movieCast);
+                                        $newMovie -> setCode($movieId);
+
+                                        if (!$res) // if director does not exist then create
+                                        {
+                                            $director = new Director();
+                                            $director->setName($movieDirect);
+                                            $director->setSurname(".");
+                                            $newMovie->setDirector($director);
+                                            $entityManager->persist($director);
+
+
+
+                                        }
+                                        else{
+
+                                            $dir = $this->getDoctrine()
+                                                ->getRepository(Director::class)
+                                                ->findDirectorByName($movieDirect);
+                                            $newMovie->setDirector($dir);
+                                        }
+
+                                        if(!$resData)//if genre does not exist
+                                        {
+                                            $movieGenre = new Genre();
+                                            $movieGenre->setType($movieGen);
+                                            $newMovie->addGenre($movieGenre);
+                                            $entityManager->persist($movieGenre);
+
+                                        }
+                                        else{
+                                            $movGen = $this->getDoctrine()
+                                                ->getRepository(Genre::class)
+                                                ->findGenreByType($movieGen);
+                                            $newMovie->addGenre($movGen);
+                                        }
+                                        $entityManager->persist($newMovie);
+                                        $entityManager->flush();
+
+                                    }
+
+                                }
+
+                            }
                         }
 
-                        }
                     }
 
                 }
 
             }
-
+            return new JsonResponse(['status' => 'Customer created!'], Response::HTTP_CREATED);
         }
-        return new JsonResponse(['status' => 'Customer created!'], Response::HTTP_CREATED);
+        catch (Exception $e ){
+
+            echo 'Message: ' .$e->getMessage();
+        }
 
     }
 
