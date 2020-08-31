@@ -73,151 +73,105 @@ class MovieController extends AbstractController
             return $this->redirectToRoute('movie_list');
     }
 
+
+
     /**
      * @Route("/sync", name="data_sync", methods={"GET","POST"})
      */
     public function sync(Request $request, MovieRepository $movieRepository): JsonResponse
     {
-        $url = 'https://www.eventcinemas.com.au/Movies/GetNowShowing';
+        $url = 'https://www.eventcinemas.com.au/Movies/GetNowShowing?apiKey=klasjdhjaisodh';
         $data = file_get_contents($url); //get the json data
 
         $dataArr = json_decode($data,true); //convert to an associative array
-        $conn = $this->getDoctrine()->getConnection();
         $entityManager = $this->getDoctrine()->getManager();
-       //dd($dataArr);
 
         try {
-            //Parsing Array to get Movie data to load into db
-            foreach ($dataArr as $key=> $value) {
-                if ($key == 'Data') {
-                    foreach ($value as $key => $movie) {
-                        if($key == 'Movies') {
-                            foreach ($movie as $key => $list)
-                            {
-                                $movieId = 0;
-                                $movieName=""; $movieYear = "";$movieCast= ""; $movieDesc=""; $movieGen=""; $movieDirect="";
-                                foreach ($list as $key => $details){
+            if(isset($dataArr["Data"]["Movies"]) )
+            {
+                foreach ($dataArr["Data"]["Movies"] as $movie) {
+                    $newMovie = new Movie();
+                    $movieDirector = ""; $movieGenre = "";
+                    //Get Movie, see if exists, if not create a new one.
 
-                                    if($key == 'Id'){
-                                        $movieId = $details;
-                                    }
-                                    if($key == 'Name'){
-                                        $movieName = $details;
+                    if (($movieRepository->findOneBy(['code' => $movie['Id']])) == null) {
 
-                                    }
-                                    if ($key == 'ReleasedAt'){
-                                        $movieYear = $details;
-
-                                    }
-                                    if ($key == 'MainCast'){
-                                        $movieCast = $details;
-
-                                    }
-                                    if ($key == 'Director'){
-                                        $movieDirect = $details;
+                        if (isset($movie['MainCast']) && isset($movie['Id']) && isset($movie['Genres']) && isset($movie['Director'])) {
+                            $newMovie->setCode($movie['Id']);
+                            $newMovie->setName($movie['Name']);
+                            $newMovie->setYear($movie['ReleasedAt']);
+                            $newMovie->setMainCast($movie['MainCast']);
+                            $newMovie->setSynopsis($movie['Synopsis']);
+                            $newMovie->setRating(0);
+                            $movieGenre = $movie['Genres'];
+                            $movieDirector = $movie['Director'];
+                            $entityManager->persist($newMovie);
 
 
-                                    }
-                                    if ($key == 'Genres'){
-                                        $movieGen = $details;
+                            //Check genre +  Director are in DB
+                            $newMovie = $this->CreateGenreAndDirectorIfNotExists($newMovie, $movieGenre, $movieDirector);
 
-                                    }
-                                    if ($key == 'Synopsis'){
-                                        $movieDesc = $details;
-                                    }
-                                }
-
-                                //query to check if movie exists in the database
-                                $sql = "SELECT * FROM Movie where Movie.code = '$movieId'";
-                                $statement = $conn->prepare($sql);
-                                $statement->execute();
-                                $result = ($statement->fetchAll());
-
-                                //query to check if genre exists
-                                $sqlGen = "SELECT * FROM Genre WHERE Genre.type = '$movieGen'";
-                                $state = $conn->prepare($sqlGen);
-                                $state->execute();
-                                $resData = ($state->fetchAll());
-
-                                //query to check if director exists
-                                $sqlDirect = ' SELECT * FROM Director WHERE Director.name like "$movieDirect" ' ;
-                                $stm = $conn->prepare($sqlDirect);
-                                $stm->execute();
-                                $res = ($stm->fetchAll());
-
-                                //check if movie exists
-                                if (!$result )
-                                {
-                                    //validating for null values
-                                    if (($movieCast && $movieDirect && $movieDesc && $movieName && $movieGen ) != null){
-
-
-                                        $newMovie = new Movie();
-                                        $newMovie-> setName($movieName);
-                                        $newMovie-> setYear($movieYear);
-                                        $newMovie -> setRating(0);
-                                        $newMovie -> setSynopsis($movieDesc);
-                                        $newMovie -> setMainCast($movieCast);
-                                        $newMovie -> setCode($movieId);
-
-                                        // if director does not exist then add it to database
-                                        if (!$res)
-                                        {
-                                            $director = new Director();
-                                            $director->setName($movieDirect);
-                                            $director->setSurname(".");
-                                            $newMovie->setDirector($director);
-                                            $entityManager->persist($director);
-
-
-
-                                        }
-                                        else{
-
-                                            $dir = $this->getDoctrine()
-                                                ->getRepository(Director::class)
-                                                ->findDirectorByName($movieDirect);
-                                            $newMovie->setDirector($dir);
-                                        }
-
-                                        //if genre does not exist then add it to the database
-                                        if(!$resData)
-                                        {
-                                            $movieGenre = new Genre();
-                                            $movieGenre->setType($movieGen);
-                                            $newMovie->addGenre($movieGenre);
-                                            $entityManager->persist($movieGenre);
-
-                                        }
-                                        else{
-                                            $movGen = $this->getDoctrine()
-                                                ->getRepository(Genre::class)
-                                                ->findGenreByType($movieGen);
-                                            $newMovie->addGenre($movGen);
-                                        }
-                                        $entityManager->persist($newMovie);
-                                        $entityManager->flush();
-
-                                    }
-
-                                }
-
-                            }
+                            //Check
+                            $entityManager->persist($newMovie);
+                            $entityManager->flush();
                         }
 
                     }
 
                 }
-
             }
             return new JsonResponse(['status' => 'Movies Synced'], Response::HTTP_CREATED);
         }
         catch (Exception $e ){
-
             echo 'Message: ' .$e->getMessage();
         }
 
     }
+
+    //
+    // This function will look up the director & Genre and create them if they don't exist.
+    // It returns the movie object that was sent to it, so we can persist with the correct joins.
+
+
+    private function CreateGenreAndDirectorIfNotExists($newMovie,$movieGen, $movieDirect){
+        $entityManager = $this->getDoctrine()->getManager();
+
+        //query to check if genre exists
+        $genreExistsCheck = $this->getDoctrine()->getRepository(Genre::class)->findOneBy(['type' => $movieGen]);
+
+            //query to check if director exists
+            $directorExistsCheck = $this->getDoctrine()->getRepository(Director::class)->findOneBy(['name' => $movieDirect]);
+            // if director does not exist then add it to database
+            if (!$directorExistsCheck)
+            {
+                $director = new Director();
+                $director->setName($movieDirect);
+                $director->setSurname(" ");
+                $newMovie->setDirector($director);
+                $entityManager->persist($director);
+                $entityManager->flush();
+            }
+            else{
+                $newMovie->setDirector($directorExistsCheck);
+            }
+
+        //if genre does not exist then add it to the database
+            // if director does not exist then add it to database
+            if (!$genreExistsCheck)
+            {
+                $movieGenre = new Genre();
+                $movieGenre->setType($movieGen);
+                $newMovie->addGenre($movieGenre);
+                $entityManager ->persist($movieGenre);
+                $entityManager->flush();
+            }
+            else{
+                $newMovie-> addGenre($genreExistsCheck);
+            }
+
+        return $newMovie;
+    }
+
 
     /**
      * @Route("/new", name="movie_new", methods={"GET","POST"})

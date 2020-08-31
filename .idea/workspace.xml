@@ -28,9 +28,6 @@
     <list default="true" id="54177dc5-5945-427a-b00c-cb97732eebc0" name="Default Changelist" comment="Web app Skeleton">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/homepage.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/homepage.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/movie/review.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/movie/review.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +160,7 @@
       <workItem from="1597399752076" duration="328000" />
       <workItem from="1597400094065" duration="1059000" />
       <workItem from="1597401171690" duration="6361000" />
-      <workItem from="1597907459984" duration="123687000" />
+      <workItem from="1597907459984" duration="137775000" />
     </task>
     <task id="LOCAL-00001" summary="Web app Skeleton">
       <created>1597398724254</created>
@@ -259,13 +256,13 @@
       <screen x="0" y="0" width="1504" height="963" />
     </state>
     <state x="240" y="57" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1597470366506" />
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1598167393476">
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2" timestamp="1598182731766">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1598167393476" />
-    <state x="415" y="206" width="672" height="160" key="search.everywhere.popup" timestamp="1598099316099">
+    <state x="345" y="215" key="Vcs.Push.Dialog.v2/0.0.1504.963@0.0.1504.963" timestamp="1598182731766" />
+    <state x="415" y="206" width="672" height="160" key="search.everywhere.popup" timestamp="1598623279961">
       <screen x="0" y="0" width="1504" height="963" />
     </state>
-    <state x="415" y="206" width="672" height="160" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1598099316099" />
+    <state x="415" y="206" width="672" height="160" key="search.everywhere.popup/0.0.1504.963@0.0.1504.963" timestamp="1598623279961" />
   </component>
 </project>
